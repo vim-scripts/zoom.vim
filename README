@@ -1,0 +1,19 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2321
+
+Control Vim editor font size with key "+", or key "-".
+Press "+" key, Vim editor gui font size will change bigger.
+And, press "-" key, Vim editor gui font size will change smaller.
+
+This plugin is for GUI only.
+
+
+Normal Mode:
+    +                  ... change font size bigger
+    -                  ... change font size smaller
+
+Command-line Mode:
+    :ZoomIn            ... change font size bigger
+    :ZoomOut           ... change font size smaller
+    :ZoomReset         ... reset font size changes.
+
+
