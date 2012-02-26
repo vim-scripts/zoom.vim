@@ -15,8 +15,10 @@ command! -narg=0 ZoomOut   :call s:ZoomOut()
 command! -narg=0 ZoomReset :call s:ZoomReset()
 
 " map
-nmap + :ZoomIn<CR>
-nmap - :ZoomOut<CR>
+if !exists('g:do_not_use_default_shortcuts_for_zoom')
+  nmap + :ZoomIn<CR>
+  nmap - :ZoomOut<CR>
+endif
 
 " guifont size + 1
 function! s:ZoomIn()
