@@ -11,6 +11,11 @@ Normal Mode:
     +                  ... change font size bigger
     -                  ... change font size smaller
 
+If you set the variable 'g:do_not_use_default_shortcuts_for_zoom' the above shortcuts will be disable.
+To disable the default shortcut add this in your vimrc:
+
+"let g:do_not_use_default_shortcuts_for_zoom = 1"
+
 Command-line Mode:
     :ZoomIn            ... change font size bigger
     :ZoomOut           ... change font size smaller
