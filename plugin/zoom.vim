@@ -15,8 +15,10 @@ command! -narg=0 ZoomOut   :call s:ZoomOut()
 command! -narg=0 ZoomReset :call s:ZoomReset()
 
 " map
-nmap + :ZoomIn<CR>
-nmap - :ZoomOut<CR>
+if g:use_default_shortcuts_for_zoom
+  nmap + :ZoomIn<CR>
+  nmap - :ZoomOut<CR>
+endif
 
 " guifont size + 1
 function! s:ZoomIn()
@@ -63,6 +65,12 @@ This plugin is for GUI only.
 Normal Mode:
     +                  ... change font size bigger
     -                  ... change font size smaller
+
+If you set the variable 'g:use_default_shortcuts_for_zoom' to 0 the above 
+shortcuts will be disable. 
+To disable the default shortcut add this in your vimrc:
+
+"let g:use_default_shortcuts_for_zoom = 0"
 
 Command-line Mode:
     :ZoomIn            ... change font size bigger
