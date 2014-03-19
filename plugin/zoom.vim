@@ -20,16 +20,20 @@ nmap - :ZoomOut<CR>
 
 " guifont size + 1
 function! s:ZoomIn()
+  let l:maxsize = 999
   let l:fsize = substitute(&guifont, '^.*:h\([^:]*\).*$', '\1', '')
   let l:fsize += 1
+  let l:fsize = min([l:maxsize,l:fsize])
   let l:guifont = substitute(&guifont, ':h\([^:]*\)', ':h' . l:fsize, '')
   let &guifont = l:guifont
 endfunction
 
 " guifont size - 1
 function! s:ZoomOut()
+  let l:minsize = 1
   let l:fsize = substitute(&guifont, '^.*:h\([^:]*\).*$', '\1', '')
   let l:fsize -= 1
+  let l:fsize = max([l:minsize,l:fsize])
   let l:guifont = substitute(&guifont, ':h\([^:]*\)', ':h' . l:fsize, '')
   let &guifont = l:guifont
 endfunction
